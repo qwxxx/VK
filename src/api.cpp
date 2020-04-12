@@ -206,7 +206,7 @@ json VK::Client::call(const string &method, const string &params) {
     if(res.empty()) {
         return nullptr;
     }
-    if(res=="{\"response\":[]}") res ="{\"count\":0,\"items\":[]}";
+    if(res=="{\"response\":[]}") res ="{\"response\":{\"count\":0,\"items\":[]}}";
     try {
         json jres = json::parse(res);
 
